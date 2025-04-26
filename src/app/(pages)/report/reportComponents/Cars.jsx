@@ -1,0 +1,50 @@
+const Cars = () => {
+    const data = [
+      { name: 'تويوتا كورولا', color: 'أبيض', category: 'سيدان', price: 8500 },
+      { name: 'هيونداي النترا', color: 'رمادي', category: 'سيدان', price: 9000 },
+      { name: 'كيا سبورتاج', color: 'أسود', category: 'SUV', price: 12000 },
+      { name: 'تويوتا هايلكس', color: 'أحمر', category: 'بيك أب', price: 15000 },
+      { name: 'جيب شروكي', color: 'كحلي', category: 'SUV', price: 18000 },
+      { name: 'نيسان صني', color: 'فضي', category: 'سيدان', price: 7500 },
+      { name: 'شيفروليه تاهو', color: 'أسود', category: 'SUV', price: 22000 },
+      { name: 'هوندا أكورد', color: 'ذهبي', category: 'سيدان', price: 13000 },
+      { name: 'فورد إكسبلورر', color: 'أبيض', category: 'SUV', price: 17000 },
+      { name: 'بي إم دبليو X5', color: 'رمادي', category: 'SUV', price: 35000 }
+    ];
+  
+    return (
+      <div dir='rtl' className="relative overflow-x-auto container w-full border border-gray-300 shadow-md rounded mt-6">
+        <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+          <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+            <tr>
+              <th scope="col" className="px-6 py-3">اسم السيارة</th>
+              <th scope="col" className="px-6 py-3">اللون</th>
+              <th scope="col" className="px-6 py-3">الفئة</th>
+              <th scope="col" className="px-6 py-3">السعر ($)</th>
+            </tr>
+          </thead>
+          <tbody>
+            {data.map((item, idx) => (
+              <tr key={idx} className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200">
+                <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                  {item.name}
+                </th>
+                <td className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                  {item.color}
+                </td>
+                <td className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                  {item.category}
+                </td>
+                <td className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                  ${item.price.toLocaleString()}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    );
+  };
+  
+  export default Cars;
+  
