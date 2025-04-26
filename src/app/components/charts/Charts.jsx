@@ -11,7 +11,7 @@ const FunAreaChart = () => {
       ];
       
   return (
-    <div className="w-full h-[300px]   relative md:top-6 bg-white shadow-md rounded-xl p-4">
+    <div className="w-full h-[300px]   relative top-6 bg-white shadow-md rounded-xl p-4">
       <h2 className="text-xl font-bold text-gray-700 mb-4 text-center">📈 جرودات شهرية</h2>
       <ResponsiveContainer width="100%" height="100%">
         <AreaChart
