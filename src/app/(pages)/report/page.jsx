@@ -25,7 +25,7 @@ const page = () => {
   };
   return (
     <div className=" report  container w-[100%]">
-      <div className=" md:flex justify-around items-center gap-5 fixed top-12 z-30">
+      <div className=" md:flex justify-around items-center grid gap-8 fixed top-12 z-30">
         <button
           onClick={handleCars}
           className="bg-amber-600 text-white border border-gray-300 rounded w-[200px]"

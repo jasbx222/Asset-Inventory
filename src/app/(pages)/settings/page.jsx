@@ -10,7 +10,7 @@ export default function Page() {
       {/* معلومات الحساب */}
 
 
-      <div  className="bg-amber-600 p-6 text-amber-50 rounded-2xl shadow border border-gray-300">
+      <div  className="bg-amber-600 p-6 rounded-2xl shadow border border-gray-300">
       <h2 className="text-xl font-semibold mb-4">المعلومات العامة</h2>
       <div className="space-y-3">
         <div>
@@ -27,10 +27,10 @@ export default function Page() {
 
 
       {/* كلمة المرور */}
-      <div className="bg-amber-600 p-6 text-amber-50 rounded-2xl shadow border  border-gray-300">
+      <div className="bg-amber-600 p-6 text-gray-950 rounded-2xl shadow border  border-gray-300">
         <h2 className="text-xl font-semibold mb-4">تغيير كلمة المرور</h2>
         <div className="space-y-3">
-          <input type="password" className="w-full border rounded-xl  border-gray-300 px-4 py-2" placeholder="كلمة المرور الحالية" />
+          <input type="password" className="w-full border rounded-xl border-gray-300 px-4 py-2" placeholder="كلمة المرور الحالية" />
           <input type="password" className="w-full border rounded-xl  border-gray-300 px-4 py-2" placeholder="كلمة المرور الجديدة" />
           <input type="password" className="w-full border rounded-xl  border-gray-300 px-4 py-2" placeholder="تأكيد كلمة المرور" />
         </div>

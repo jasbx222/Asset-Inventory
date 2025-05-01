@@ -18,9 +18,9 @@ export default function Page() {
         {stats.map((item, index) => (
           <div
             key={index}
-            className={`rounded-2xl  shadow-md shadow-amber-400 p-6 text-white flex flex-col justify-center items-center bg-amber-600  `}
+            className={`rounded-2xl home shadow-md shadow-amber-400 p-6 text-white flex flex-col justify-center items-center bg-amber-600  `}
           >
-            <div className="text-sm">{item.label}</div>
+            <div className="text-2xl">{item.label}</div>
             <div className="text-3xl font-bold mt-2">{item.value}</div>
           </div>
         ))}

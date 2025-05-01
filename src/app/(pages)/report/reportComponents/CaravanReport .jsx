@@ -42,7 +42,7 @@ const CaravanReport = () => {
   return (
     <div
       dir="rtl"
-      className="relative overflow-x-auto container w-full border border-gray-300 shadow-md rounded mt-6"
+      className="relative overflow-x-auto top-24 md:top-0 container w-full border border-gray-300 shadow-md rounded mt-6"
     >
       <Search
         label="بحث"
