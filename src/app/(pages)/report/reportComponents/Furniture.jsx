@@ -114,7 +114,7 @@ const Furniture = () => {
                   {item.amount ?? "NO AMOUNT"}
                 </td>
                 <td className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                  ${item.price.toLocaleString() ?? 0}
+                  {item.price.toLocaleString('ar-IQ',{style:'currency',currency:'IQD'} ) ?? 0}
                 </td>
               </tr>
             ))}

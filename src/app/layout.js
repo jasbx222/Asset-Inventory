@@ -1,16 +1,13 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Amiri } from "next/font/google";
 import "./globals.css";
 import Sidebar from "./components/sidebar/Sidebar";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+const amiri = Amiri({
+  variable: '--font-amiri',
+  weight: ['400', '700'],
+  subsets: ['arabic'],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export const metadata = {
   title: "Create Next App",
@@ -22,7 +19,7 @@ export default function RootLayout({ children }) {
     <html lang="ar" dir="rtl">
       <body
       dir="rtl"
-        className={`${geistSans.variable} ${geistMono.variable} relative top-24 antialiased -z-50 flex justify-around items-center  `}
+        className={`${amiri.className} relative top-24 antialiased -z-50 flex justify-around items-center  `}
       >
         <Sidebar/>
         {children}
