@@ -33,13 +33,13 @@ export default function Page() {
   };
 
   return (
-    <div className="max-w-md mx-auto bg-white p-6 container w-[100%] rounded-xl shadow-md space-y-4">
+    <div className="max-w-md mx-auto bg-amber-600 p-6 container w-[100%] rounded-xl shadow-md space-y-4">
       <h2 className="text-xl font-bold mb-4 text-center">نقل منتج بين مخازن</h2>
       <form onSubmit={handleTransfer} className="space-y-4">
         <div>
           <label className="block mb-1 font-medium">اختر المنتج</label>
           <select
-            className=" border border-gray-300 rounded p-2 w-full"
+            className=" border border-gray-300 rounded p-2 w-full hover:bg-amber-600"
             value={selectedProduct}
             onChange={(e) => setSelectedProduct(e.target.value)}
           >
@@ -55,13 +55,13 @@ export default function Page() {
         <div>
           <label className="block mb-1 font-medium">من المخزن</label>
           <select
-            className="w-full border-gray-300 border rounded p-2"
+            className="w-full border-gray-300 hover:bg-amber-600 border rounded p-2"
             value={fromWarehouse}
             onChange={(e) => setFromWarehouse(e.target.value)}
           >
-            <option value="">-- اختر --</option>
+            <option value=""  >-- اختر --</option>
             {warehouses.map((w, i) => (
-              <option key={i} value={w}>
+              <option className="hover:bg-amber-600" key={i} value={w}>
                 {w}
               </option>
             ))}
@@ -71,20 +71,21 @@ export default function Page() {
         <div>
           <label className="block mb-1 font-medium">إلى المخزن</label>
           <select
-            className="w-full border-gray-300 border rounded p-2"
+            className="w-full border-gray-300 border   
+            hover:bg-amber-600                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            rounded p-2"
             value={toWarehouse}
             onChange={(e) => setToWarehouse(e.target.value)}
           >
             <option value="">-- اختر --</option>
             {warehouses.map((w, i) => (
-              <option key={i} value={w}>
+              <option  className="hover:bg-amber-600" key={i} value={w}>
                 {w}
               </option>
             ))}
           </select>
         </div>
 
-        <button type="submit" className="w-full bg-teal-500 text-white py-2 rounded hover:bg-teal-700">
+        <button type="submit" className="w-full bg-gray-950 text-white py-2 rounded hover:bg-gray-700">
           تنفيذ النقل
         </button>
       </form>
