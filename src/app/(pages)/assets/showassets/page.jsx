@@ -2,7 +2,7 @@
 import { useGet } from "@/app/lib/hooks/useGet";
 
 const page = () => {
-  const dataObj = useGet("https://asset-inventory-eight.vercel.app/api/products/");
+  const dataObj = useGet("http://localhost:3000/api/products/");
   const data = dataObj[0];
 
 
@@ -36,7 +36,7 @@ const page = () => {
             data.map((item, idx) => (
               <tr
                 key={idx}
-                className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200"
+                className="bg-white border-b  border-gray-200"
               >
                 <th
                   scope="row"
