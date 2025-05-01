@@ -60,7 +60,7 @@ const Sidebar = () => {
                 href={link.href}
                 className={`flex ${
                   path === link.href ? "bg-amber-600" : ""
-                } shadow shadow-amber-500 items-center justify-between hover:bg-amber-400 p-2 text-gray-200 rounded-lg  group`}
+                } shadow shadow-amber-500 items-center justify-between hover:bg-amber-400  p-2 text-gray-200 rounded-lg  group`}
               >
                 <span className="flex-1 hover:text-gray-900">{link.label}</span>
                 <span

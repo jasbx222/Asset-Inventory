@@ -2,7 +2,7 @@
 import { useGet } from "@/app/lib/hooks/useGet";
 
 const page = () => {
-  const dataObj = useGet("http://localhost:3000/api/products/");
+  const dataObj = useGet("https://asset-inventory-eight.vercel.app/api/products/");
   const data = dataObj[0];
 
 
