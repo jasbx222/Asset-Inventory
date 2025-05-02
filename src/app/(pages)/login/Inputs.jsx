@@ -1,4 +1,4 @@
-
+"use client"
 export const Inputs = ({label,name,type}) => {
   return (
     <div className="mb-6">
