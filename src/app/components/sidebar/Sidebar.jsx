@@ -21,8 +21,8 @@ const Sidebar = () => {
     { label: "الرئيسية", icon: <House />, href: "/home" },
     { label: "إدارة الأصول", icon: <Armchair />, href: "/assets" },
     { label: "التقارير", icon: <NotebookPenIcon />, href: "/report" },
-    { label: "إدارة الجرد", icon: <ChartArea />, href: "/" },
-    { label: "إدارة المستخدمين", icon: <Users />, href: "/" },
+    { label: "إدارة الجرد", icon: <ChartArea />, href: "/inventories" },
+    { label: "إدارة المستخدمين", icon: <Users />, href: "/users" },
     { label: "إعدادات النظام ", icon: <Settings />, href: "/settings" },
   ];
 
@@ -34,7 +34,7 @@ const Sidebar = () => {
   return (
     <nav className="fixed  top-0 right-0 z-50 " dir="rtl">
       <button onClick={handleNav} className="text-2xl text-white px-4 py-2">
-        <Menu />
+        <Menu size={40} />
       </button>
 
       <div
@@ -48,7 +48,7 @@ const Sidebar = () => {
         <button
           type="button"
           onClick={handleNav}
-          className="absolute top-2.5 left-2.5 p-1.5 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-600"
+          className="absolute  top-2.5 left-2.5 p-1.5 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-600"
         >
           <X className="text-amber-600" />
         </button>

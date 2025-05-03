@@ -33,8 +33,8 @@ export default function Page() {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {users.map((user) => (
-          <Card user={user} key={user.id}/>
+        {users.map((user,idx) => (
+          <Card user={user} key={idx}/>
         ))}
       </div>
     </div>
