@@ -1,8 +1,8 @@
 
-const Card = ({user,key}) => {
+const Card = ({user}) => {
   return (
     <div
-    key={key}
+  key={user.id}
     className="bg-white shadow-md shadow-amber-600 rounded-2xl p-6 border-t-4 border-amber-600 transition hover:shadow-lg flex flex-col justify-between"
   >
     <div>

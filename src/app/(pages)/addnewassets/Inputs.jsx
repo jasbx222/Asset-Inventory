@@ -1,12 +1,38 @@
-import React from 'react'
+import React from "react";
 
-export const Input = ({
-    name,
-    label,
-    type
-}) => {
+export const InputText = ({ label, name, required=false }) => {
   return (
-    <input name={name} className=" border-b bg-transparent   w-full text-amber-50 mr-3 py-1 px-2 leading-tight focus:outline-none" type={type} placeholder={label} aria-label={label}/>
- 
-  )
-}
+    <div>
+      <label className="block text-sm font-medium text-gray-700 mb-1">
+        {label}
+      </label>
+      <input
+        type="text"
+        name={name}
+        required={required}
+        className="w-full border border-gray-300 rounded-xl p-2 focus:outline-none focus:ring-2 focus:ring-amber-600"
+      />
+    </div>
+  );
+};
+
+export const Select = ({ label, name, options }) => {
+  return (
+    <div>
+      <label className="block text-sm font-medium text-gray-700 mb-1">
+        {label}
+      </label>
+      <select
+        name={name}
+        className="w-full border border-gray-300 rounded-xl p-2 focus:outline-none focus:ring-2 focus:ring-amber-600"
+      >
+        <option value="">-- اختر --</option>
+        {options.map((option) => (
+          <option key={option.value} value={option.value}>
+            {option.label}
+          </option>
+        ))}
+      </select>
+    </div>
+  );
+};

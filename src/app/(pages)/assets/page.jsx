@@ -33,7 +33,7 @@ export default function Page() {
         </div>
 
         {/* تحويل الاصل */}
-        <div className="bg-amber-600  rounded-2xl shadow-md p-6 hover:shadow-lg transition cursor-pointer text-center col-span-1 sm:col-span-2 flex flex-col items-center justify-center gap-2">
+        <div className="bg-amber-600  rounded-2xl shadow-md p-6 hover:shadow-lg transition cursor-pointer text-center">
           <p className="text-xl font-semibold text-gray-200">تحويل الاصل</p>
           <div className="text-gray-200 text-2xl flex justify-center items-center mt-5">
     <Link href={'replace_store'}>
@@ -42,14 +42,17 @@ export default function Page() {
     </Link>
           </div>
         </div>
-        {/* اضافة كمية */}
-        <div className="bg-amber-600  rounded-2xl shadow-md p-6 hover:shadow-lg transition cursor-pointer text-center col-span-1 sm:col-span-2 flex flex-col items-center justify-center gap-2">
-          <p className="text-xl font-semibold text-gray-200">اضافة كمية</p>
-          <div className="text-gray-200 text-2xl flex justify-center items-center mt-5 ">
-           <Link href={'/add_amount/'}>
-           <PlusIcon className="  relative right-0 top-2" size={30} /></Link>
+       
+          {/* إضافة فئة جديدة */}
+          <div className="bg-amber-600  rounded-2xl shadow-md p-6 hover:shadow-lg transition cursor-pointer text-center">
+          <p className="text-xl font-semibold text-gray-200">إضافة فئة جديدة</p>
+          <div className="text-gray-200 text-2xl flex justify-center items-center mt-5">
+            <Link href={'/addnewcategory'}>
+            <PlusIcon className="  relative right-0 top-2" size={30} />
+            </Link>
           </div>
-        </div>
+          </div>
+
       </div>
     </div>
   );

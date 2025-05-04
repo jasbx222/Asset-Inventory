@@ -24,8 +24,7 @@ export const Search = ({ searchTerm, setSearchTerm }) => {
   );
 };
 
-
-// جدول العمليات 
+// جدول العمليات
 
 export const Table = ({ filtered }) => {
   return (

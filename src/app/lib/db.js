@@ -1,28 +1,24 @@
-import sql from 'mssql';
+import mongoose from 'mongoose';
 
-const config = {
-  user: 'sa',     
-  password: '1',
-  server: '127.0.0.1', 
-  database: 'InveTech2',
-  options: {
-    encrypt: false,           // إذا كان السيرفر محلي بدون SSL
-    trustServerCertificate: true, // مهم غالبًا للبيئات المحلية
-  },
-  port: 1433,                 // بورت MSSQL الافتراضي
-};
+const MONGODB_URI ="mongodb+srv://gloop216:dI5NO46sO6YgEKTR@cluster0.v1dyu.mongodb.net/";
 
-let pool;
-
-export async function connectToDatabase() {
-  if (pool) {
-    return pool;
-  }
-  try {
-    pool = await sql.connect(config);
-    return pool;
-  } catch (error) {
-    console.error('Database Connection Failed:', error);
-    throw error;
-  }
+if (!MONGODB_URI) {
+  throw new Error('يرجى ضبط متغير البيئة MONGODB_URI');
 }
+
+let cached = global.mongoose || { conn: null, promise: null };
+
+async function connectToDatabase() {
+  if (cached.conn) return cached.conn;
+
+  if (!cached.promise) {
+    cached.promise = mongoose.connect(MONGODB_URI, {
+      bufferCommands: false,
+    });
+  }
+
+  cached.conn = await cached.promise;
+  return cached.conn;
+}
+
+export default connectToDatabase;

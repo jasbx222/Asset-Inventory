@@ -1,18 +1,18 @@
-'use client'
-import { useParams } from 'next/navigation'
+"use client";
+import { useParams } from "next/navigation";
 
 const inventoryDetails = {
-  id: '1',
-  date: '2025-05-01',
-  location: 'مخزن البصرة',
-  user: 'أحمد محمد',
+  id: "1",
+  date: "2025-05-01",
+  location: "مخزن البصرة",
+  user: "أحمد محمد",
   readAssets: 120,
   missingAssets: 3,
   damagedAssets: 2,
-}
+};
 
 export default function Page() {
-  const { id } = useParams()
+  const { id } = useParams();
 
   return (
     <div className="p-6 text-right space-y-4">
@@ -34,5 +34,5 @@ export default function Page() {
         </div>
       </div>
     </div>
-  )
+  );
 }

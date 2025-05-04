@@ -1,27 +1,71 @@
-import { Input } from "./Inputs"
+"use client";
+import { Circle, CircleAlert, Save } from "lucide-react";
+import { InputText, Select } from "./Inputs";
+import { useActionState } from "react";
+import { sendItems } from "./validate/PostData";
 
-const page = () => {
+export default function Page() {
+  const authorities = ["الهيئة العامة", "هيئة تقنية", "هيئة إدارية"];
+  const [state, action, isPending] = useActionState(sendItems, undefined);
   return (
-    <form className="w-full grid grid-cols-1 relative top-24 gap-6 max-w-sm">
+    <div className="min-h-screen   container w-[100%]  p-6">
+      <div className="max-w-4xl mx-auto bg-white shadow-md hover:shadow-2xl shadow-amber-600  rounded-3xl p-8">
+        <h2 className="text-3xl font-bold text-amber-600 text-center mb-8">
+          <span>إضافة أصل </span>
+        </h2>
 
- <Input type={'text'} label={'اسم الاصل'} name={'asstsname'}/>
- 
- <Input type={'text'} label={'باركود الاصل'} name={'num'}/>
- 
- <Input type={'date'} label={' تاريخ الانشاء'} name={'date'}/>
- 
- <Input type={'text'} label={'التصنيف'} name={'cat'}/>
- 
- <Input type={'text'} label={'المستودع'} name={'store'}/>
- 
-   
-   
-    <button className="flex-shrink-0 relative  right-3 bg-amber-600 hover:bg-gray-700 bo  text-sm  text-white py-1 px-2 rounded" type="button">
-        ارسال البيانات
-      </button>
+        <form action={action} className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {/* رقم الأصل */}
+          <InputText label="رقم الأصل" name="assetId" required={true} />
 
-  </form>
-  )
+          {/* اسم الأصل */}
+          <InputText label="اسم الأصل" name="assetName" required={true} />
+          {/* الكمية */}
+          <InputText label="الكمية" name="quantity" />
+          {/* الموقع */}
+          <InputText label="الموقع" name="location" />
+
+          {/* الحالة */}
+          <Select
+            label="الحالة"
+            name="status"
+            options={[
+              { value: "جديد", label: "جديد" },
+              { value: "مستعمل", label: "مستعمل" },
+              { value: "تالف", label: "تالف" },
+            ]}
+          />
+
+          {/* الملاحظات */}
+          <InputText label="الملاحظات" name="notes" required />
+
+          {/* الهيئة */}
+          <Select
+            label="الهيئة"
+            name="authority"
+            options={authorities.map((auth) => ({ value: auth, label: auth }))}
+          />
+
+          {/* زر الإرسال */}
+          <div className="md:col-span-2 flex  justify-center items-center mt-4">
+            <button
+              type="submit"
+              className="bg-amber-600 flex  justify-center items-center hover:bg-amber-700 text-white font-semibold py-2 px-6 rounded-xl transition"
+            >
+              {isPending ? (
+                <span className="animate-spin">
+                  <Circle />
+                </span>
+              ) : (
+                <div className="flex items-center gap-2">
+                  <Save size={20} />
+                  <span>إضافة</span>
+                </div>
+              )}
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  );
 }
-
-export default page
