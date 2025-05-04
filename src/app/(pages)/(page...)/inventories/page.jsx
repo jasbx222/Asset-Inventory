@@ -104,30 +104,10 @@ export default function Page() {
       <h1 className="text-3xl font-semibold text-amber-600 mb-6">
         عمليات الجرد
       </h1>
-      <div className=" mb-4 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
-        <button
-          className="
-        flex items-center justify-center mb-4 bg-green-400 text-gray-950 px-4 py-2 rounded-lg shadow-md hover:bg-amber-700 transition duration-300"
-        >
-          <span>تصدير Exel</span>
-        </button>
-        <button
-          className="
-        flex items-center justify-center mb-4 bg-blue-400 text-gray-950 px-4 py-2 rounded-lg shadow-md hover:bg-amber-700 transition duration-300"
-        >
-          <span>إضافة عملية جرد جديدة</span>
-        </button>
-        <button
-          className="
-        flex items-center justify-center mb-4 bg-blue-400 text-gray-950 px-4 py-2 rounded-lg shadow-md hover:bg-amber-700 transition duration-300"
-          onClick={handleShow}
-        >
-          <span>
-           {show ? "إخفاء الفلاتر" : "إظهار الفلاتر"}
-            
-            </span>
-        </button>
-      </div>
+      {/* ازرار الفلاتر*/}
+      <BtnFliter handleShow={handleShow} show={show} />
+   
+
       {/* الفلاتر */}
 
       {show ? (

@@ -174,13 +174,35 @@ export const FilterDate = () => {
 
 // زر تطبيق الفلتر
 
-export const BtnFliter = () => {
+export const BtnFliter = ({
+  handleShow,
+  show,
+  
+}) => {
   return (
+    <div className=" mb-4 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
     <button
       className="
-        flex items-center justify-center mb-4 bg-blue-400 text-gray-950 px-4 py-2 rounded-lg shadow-md hover:bg-amber-700 transition duration-300"
+    flex items-center justify-center mb-4 bg-green-400 text-gray-950 px-4 py-2 rounded-lg shadow-md hover:bg-amber-700 transition duration-300"
     >
-      <span> تطبيق الفلتر</span>
+      <span>تصدير Exel</span>
     </button>
+    <button
+      className="
+    flex items-center justify-center mb-4 bg-blue-400 text-gray-950 px-4 py-2 rounded-lg shadow-md hover:bg-amber-700 transition duration-300"
+    >
+      <span>إضافة عملية جرد جديدة</span>
+    </button>
+    <button
+      className="
+    flex items-center justify-center mb-4 bg-blue-400 text-gray-950 px-4 py-2 rounded-lg shadow-md hover:bg-amber-700 transition duration-300"
+      onClick={handleShow}
+    >
+      <span>
+       {show ? "إخفاء الفلاتر" : "إظهار الفلاتر"}
+        
+        </span>
+    </button>
+  </div>
   );
 };
