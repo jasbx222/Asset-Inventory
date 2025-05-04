@@ -1,5 +1,6 @@
 "use client";
-import { useGet } from "@/app/lib/hooks/useGet";
+
+import { useGet } from "@/app/utils/hooks/useGet";
 
 const page = () => {
   const dataObj = useGet("http://localhost:3000/api/products/");
