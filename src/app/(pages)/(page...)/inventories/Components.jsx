@@ -99,3 +99,88 @@ export const Table = ({ filtered }) => {
     </table>
   );
 };
+
+// فلاتر العمليات
+
+// فلتر الموقع
+
+export const FilterLocation = () => {
+  return (
+    <div className="mb-4 bg-gray-100 p-4 rounded-lg shadow-md">
+      <h2 className="text-xl font-semibold mb-2">الموقع</h2>
+      <p>📍 اختر الموقع: </p>
+      <select className="border border-gray-300 rounded-lg p-2 mt-2 w-full">
+        <option value="">اختر الموقع</option>
+        <option value="بغداد">بغداد</option>
+        <option value="البصرة">البصرة</option>
+        <option value="أربيل">أربيل</option>
+        <option value="النجف">النجف</option>
+        <option value="كربلاء">كربلاء</option>
+      </select>
+    </div>
+  );
+};
+
+
+// فلتر الموظف
+export const FilterEmployee = () => {
+  return (
+    <div className="mb-4 bg-gray-100 p-4 rounded-lg shadow-md">
+      <h2 className="text-xl font-semibold mb-2">الموظف</h2>
+      <p>👤 اختر الموظف: </p>
+      <select className="border border-gray-300 rounded-lg p-2 mt-2 w-full">
+        <option value="">اختر الموظف</option>
+        <option value="أحمد محمد">أحمد محمد</option>
+        <option value="سارة علي">سارة علي</option>
+        <option value="علي كريم">علي كريم</option>
+        <option value="ليلى حسين">ليلى حسين</option>
+        <option value="ياسر فاضل">ياسر فاضل</option>
+      </select>
+    </div>
+  );
+};
+
+
+// فلتر الأصول
+export const FilterAssets = () => {
+  return (
+    <div className="mb-4 bg-gray-100 p-4 rounded-lg shadow-md">
+      <h2 className="text-xl font-semibold mb-2">الأصول</h2>
+      <p>📦 اختر الأصول: </p>
+      <select className="border border-gray-300 rounded-lg p-2 mt-2 w-full">
+        <option value="">اختر الأصول</option>
+        <option value="الأصل 1">الأصل 1</option>
+        <option value="الأصل 2">الأصل 2</option>
+      </select>
+    </div>
+  );
+};
+
+
+// فلتر التاريخ
+
+export const FilterDate = () => {
+  return (
+    <div className="mb-4 bg-gray-100 p-4 rounded-lg shadow-md">
+      <h2 className="text-xl font-semibold mb-2">تقويم الجرد</h2>
+      <p>📅 اختر التاريخ: </p>
+      <input
+        type="date"
+        className="border border-gray-300 rounded-lg p-2 mt-2"
+      />
+    </div>
+  );
+};
+
+// زر تطبيق الفلتر
+
+export const BtnFliter = () => {
+  return (
+    <button
+      className="
+        flex items-center justify-center mb-4 bg-blue-400 text-gray-950 px-4 py-2 rounded-lg shadow-md hover:bg-amber-700 transition duration-300"
+    >
+      <span> تطبيق الفلتر</span>
+    </button>
+  );
+};
