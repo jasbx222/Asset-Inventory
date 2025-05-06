@@ -4,6 +4,7 @@ import Link from "next/link";
 import Card from "./Card";
 import { useRouter, useSearchParams } from "next/navigation";
 import Pagination from "@/app/components/pagination/Pagination";
+import { Suspense } from "react";
 
 const users = [
   { id: 1, name: "أحمد علي", phone: "07812345678", email: "ahmed@example.com", permission: "مشرف" },
@@ -49,7 +50,14 @@ const goToPage = (page) => {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {currentItems.map((user) => (
-          <Card user={user} />
+          <Suspense key={user.id} fallback={<div className="bg-gray-200 animate-pulse h-48 rounded-lg">
+            <div className="h-4 bg-gray-300 rounded w-3/4 mb-2"></div>
+            <div className="h-4 bg-gray-300 rounded w-1/2 mb-2"></div>
+            <div className="h-4 bg-gray-300 rounded w-full"></div>
+          </div>}>
+  <Card user={user} />
+          </Suspense>
+        
         ))}
       </div>
       <Pagination totalPages={totalPages} currentPage={currentPage} goToPage={goToPage} />  
