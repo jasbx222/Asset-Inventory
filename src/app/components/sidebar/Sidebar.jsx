@@ -65,7 +65,7 @@ const Sidebar = () => {
           <Link
           onClick={toggleMore}
                 href={''}
-                className={`flex items-center justify-between gap-5 hover:bg-[#fa9718] p-2 text-gray-200 rounded-lg group`}
+                className={`shadow shadow-[#fa9718] flex items-center justify-between gap-5 hover:bg-[#fa9718] p-2 text-gray-200 rounded-lg group`}
               >
         
                 <span className={`w-5 h-5 text-amber-50`}>
@@ -77,7 +77,7 @@ const Sidebar = () => {
               </Link>
 
             {/* قائمة منسدلة */}
-            <MoreLinks isMoreOpen={isMoreOpen} moreLinks={moreLinks} />
+            <MoreLinks isMoreOpen={isMoreOpen} path={path} moreLinks={moreLinks} />
           </li>
         </ul>
         {/* اللوغو والفوتر */}

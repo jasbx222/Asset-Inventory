@@ -1,4 +1,4 @@
-import { MountainIcon, PackagePlus, Printer, SearchCheck } from "lucide-react";
+import {  PackagePlus, Printer, SearchCheck } from "lucide-react";
 import { Timer, LocationEdit, User, Pencil, Trash2 } from "lucide-react";
 import Link from "next/link";
 
@@ -68,18 +68,18 @@ export const Table = ({ filtered }) => {
             >
               <td className="px-6 py-4 text-center border-t font-medium text-amber-600">
                 <Link
-                  href={`/inventories/inventorie/${inv.id}`}
+                  href={`/inventories/inventorie/${inv.id??0}`}
                   className="hover:underline"
                 >
                   #{inv.id}
                 </Link>
               </td>
-              <td className="px-6 py-4 text-center border-t">{inv.date}</td>
-              <td className="px-6 py-4 text-center border-t">{inv.location}</td>
+              <td className="px-6 py-4 text-center border-t">{inv.date??Date.now()}</td>
+              <td className="px-6 py-4 text-center border-t">{inv.location ?? "لا يوجد موقع"}</td>
               <td className="px-6 py-4 text-center border-t">
                 {inv.quntity ?? 0}
               </td>
-              <td className="px-6 py-4 text-center border-t">{inv.user}</td>
+              <td className="px-6 py-4 text-center border-t">{inv.user ?? "لايوجد مستخدم"}</td>
 
               <td className="px-6 py-4 text-center border-t">
                 <div className="flex justify-center gap-3">
@@ -106,6 +106,14 @@ export const Table = ({ filtered }) => {
           </tr>
         )}
       </tbody>
+      <tfoot className="bg-amber-50 text-amber-700 font-bold">
+        <tr>
+          <td colSpan={5} className="px-6 py-4 text-center border-t">
+            إجمالي العمليات:{" "}
+            <span className="text-red-500">{filtered.length ?? 0}</span>
+          </td>
+        </tr>
+      </tfoot>
     </table>
   );
 };
@@ -168,13 +176,27 @@ export const FilterAssets = () => {
 
 export const FilterDate = () => {
   return (
-    <div className="mb-4 bg-gray-100 p-4 rounded-lg shadow-md">
-      <h2 className="text-xl font-semibold mb-2">تقويم الجرد</h2>
-      <p>📅 اختر التاريخ: </p>
+    <div className="mb-4 bg-gray-100
+    flex flex-row items-center p-4 rounded-lg shadow-md
+    gap-5
+     ">
+
+    
+      <h2 className="text-xl font-semibold mb-2">
+        <Timer size={30} className="text-gray-800" /> 
+      </h2>
+      <p> من التاريخ: </p>
       <input
         type="date"
         className="border border-gray-300 rounded-lg p-2 mt-2"
       />
+      <p className="mt-2">الى  التاريخ: </p>
+      <input
+
+        type="date"
+        className="border border-gray-300 rounded-lg p-2 mt-2"
+      />
+    
     </div>
   );
 };

@@ -5,26 +5,13 @@ import Card from "./Card";
 import { useRouter, useSearchParams } from "next/navigation";
 import Pagination from "@/app/components/pagination/Pagination";
 import { Suspense } from "react";
-import Loading from "@/app/Loading";
+import CircleLoading from "@/app/components/loading/CircleLoading";
+
+
+
 const users = [
-  { id: 1, name: "أحمد", phone: "123456789", email: "jassim@emial.com"
-, permission: "admin" },
-  { id: 2, name: "علي", phone: "987654321", email: "  ", permission: "user" },
-  { id: 3, name: "فاطمة", phone: "456789123", email: "", permission: "admin" },
-  { id: 4, name: "سارة", phone: "321654987", email: "", permission: "user" },
-  { id: 5, name: "محمد", phone: "654321789", email: "", permission: "admin" },
-  { id: 6, name: "عائشة", phone: "789123456", email: "", permission: "user" },
-  { id: 7, name: "يوسف", phone: "159753486", email: "", permission: "admin" },
-  { id: 8, name: "خالد", phone: "753159864", email: "", permission: "user" },
-  { id: 9, name: "نورة", phone: "951753486", email: "", permission: "admin" },
-  { id: 10, name: "راشد", phone: "258963147", email: "", permission: "user" },
-  { id: 11, name: "علياء", phone: "369258147", email: "", permission: "admin" },
-  { id: 12, name: "سلمان", phone: "147258369", email: "", permission: "user" },
-  { id: 13, name: "هند", phone: "258147369", email: "", permission: "admin" },
-  { id: 14, name: "عبدالله", phone: "369147258", email: "", permission: "user" },
-  { id: 15, name: "مريم", phone: "456123789", email: "", permission: "admin" },
-
-
+  // { id: 1, name: "User 1", phone: "123456789", email: "jassim@gmail.com", permission: "admin" },
+ 
 ];
 
 function UsersList() {
@@ -52,7 +39,7 @@ function UsersList() {
         </div>
       ) : (
         <div className="flex justify-center items-center h-screen">
-          <Loading />
+      <CircleLoading/>
         </div>
       )}
       <Pagination

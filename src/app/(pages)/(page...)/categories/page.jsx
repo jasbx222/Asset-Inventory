@@ -2,7 +2,19 @@
 import { useState } from "react";
 import Add from "./Add";
 import TableCategories from "./Table";
-const categories = ["فئة 1", "فئة 2", "فئة 3", "فئة 4", "فئة 5", "فئة 6"];
+const categories = [
+  { id: 1, name: "الاثاث"},
+  { id: 2, name: "الأجهزة الكهربائية" },
+  { id: 3, name: "الأدوات المكتبية" },
+  { id: 4, name: "المعدات الثقيلة" },
+  { id: 5, name: "الآلات الصناعية" },
+  { id: 6, name: "المركبات" },
+  { id: 7, name: "الأدوات اليدوية" },
+  { id: 8, name: "الأجهزة الإلكترونية" },
+  { id: 9, name: "الأدوات المنزلية" },
+
+
+];
 export default function Page() {
   const [isTableVisible, setIsTableVisible] = useState(false);
 

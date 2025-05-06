@@ -17,6 +17,42 @@ const inventories = [
     user: "أحمد محمد",
     quntity: 20,
   },
+ 
+  {
+    id: "2",
+    date: "2025-05-02",
+    location: "مخزن بغداد",
+    user
+: "سارة علي",
+    quntity: 15,
+  },
+  {
+    id: "3",
+    date: "2025-05-03",
+    location: "مخزن أربيل",
+    user: "علي كريم",
+    quntity: 30,
+  },
+  {
+    id: "4",
+    date: "2025-05-04",
+    location: "مخزن النجف",
+    user: "ليلى حسين",
+    quntity: 25,
+  },
+  {
+    id: "5",
+    date: "2025-05-05",
+    location: "مخزن كربلاء",
+    user: "ياسر فاضل",
+    quntity: 10,
+  },
+
+
+
+
+
+
 ];
 
 export default function Page() {

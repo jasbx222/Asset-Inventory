@@ -19,5 +19,7 @@ export const mainLinks = [
 
 export const moreLinks = [
   { label: "تسجيل الخروج", icon: <LogOut />, href: "/logout" },
+  { label: "الملف الشخصي", icon: <Users />, href: "/profile" },
+
 
 ];
