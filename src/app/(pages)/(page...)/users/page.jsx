@@ -10,7 +10,13 @@ import CircleLoading from "@/app/components/loading/CircleLoading";
 
 
 const users = [
-  // { id: 1, name: "User 1", phone: "123456789", email: "jassim@gmail.com", permission: "admin" },
+   { id: 1, name: "User 1", phone: "123456789", email: "jassim@gmail.com", permission: "admin" },
+   { id: 2, name: "User 1", phone: "123456789", email: "jassim@gmail.com", permission: "admin" },
+   { id: 3, name: "User 1", phone: "123456789", email: "jassim@gmail.com", permission: "admin" },
+   { id: 4, name: "User 1", phone: "123456789", email: "jassim@gmail.com", permission: "admin" },
+   { id: 5, name: "User 1", phone: "123456789", email: "jassim@gmail.com", permission: "user" },
+   { id: 6 name: "User 1", phone: "123456789", email: "jassim@gmail.com", permission: "user" },
+  
  
 ];
 
