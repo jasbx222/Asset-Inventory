@@ -48,27 +48,33 @@ const Sidebar = () => {
                 href={link.href}
                 className={`flex ${
                   path === link.href ? "bg-[#fa9718]" : ""
-                } shadow shadow-[#fa9718] items-center justify-between hover:bg-[#fa9718] p-2 text-gray-200 rounded-lg group`}
+                } shadow shadow-[#fa9718] items-center justify-between gap-5 hover:bg-[#fa9718] p-2 text-gray-200 rounded-lg group`}
               >
-                <span className="flex-1 hover:text-gray-900">{link.label}</span>
+              
                 <span className={`w-5 h-5 text-amber-50`}>{link.icon}</span>
+                <span className="flex-1 hover:text-gray-900">{link.label}</span>
+                {path === link.href && (
+                  <span className="text-amber-50">✔</span>
+                )}
               </Link>
             </li>
           ))}
 
           {/* زر المزيد من المعلومات */}
           <li>
-            <button
-              onClick={toggleMore}
-              className="flex w-full shadow shadow-[#fa9718] items-center justify-between hover:bg-[#fa9718] p-2 text-gray-200 rounded-lg group"
-            >
-              <span className="flex-1 hover:text-gray-900">
-                المزيد من المعلومات
-              </span>
-              <span className={`w-5 h-5 text-amber-50`}>
-                <MoreVertical />
-              </span>
-            </button>
+          <Link
+          onClick={toggleMore}
+                href={''}
+                className={`flex items-center justify-between gap-5 hover:bg-[#fa9718] p-2 text-gray-200 rounded-lg group`}
+              >
+        
+                <span className={`w-5 h-5 text-amber-50`}>
+                  <MoreVertical onClick={toggleMore} />
+                </span>
+                <span className="flex-1 hover:text-gray-900">
+                  المزيد من المعلومات
+                </span>
+              </Link>
 
             {/* قائمة منسدلة */}
             <MoreLinks isMoreOpen={isMoreOpen} moreLinks={moreLinks} />
