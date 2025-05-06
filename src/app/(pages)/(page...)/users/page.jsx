@@ -2,6 +2,8 @@
 
 import Link from "next/link";
 import Card from "./Card";
+import { useRouter, useSearchParams } from "next/navigation";
+import Pagination from "@/app/components/pagination/Pagination";
 
 const users = [
   { id: 1, name: "أحمد علي", phone: "07812345678", email: "ahmed@example.com", permission: "مشرف" },
@@ -19,8 +21,21 @@ const users = [
   { id: 13, name: "باسل عامر", phone: "07955443322", email: "basel@example.com", permission: "محرر" },
 ]
 
-
 export default function Page() {
+  
+const searchParams = useSearchParams();
+const router = useRouter();
+const itemsPerPage = 5;
+const currentPage = parseInt(searchParams.get("page")) || 1;
+const totalPages = Math.ceil(users.length / itemsPerPage);
+
+const start = (currentPage - 1) * itemsPerPage;
+const end = start + itemsPerPage;
+const currentItems = users.slice(start, end);
+
+const goToPage = (page) => {
+  router.push(`?page=${page}`);
+};
   return (
     <div className="min-h-screen container w-[100%] py-10 px-4" dir="rtl">
       <div className="flex justify-between items-center mb-4">
@@ -33,10 +48,11 @@ export default function Page() {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {users.map((user) => (
+        {currentItems.map((user) => (
           <Card user={user} />
         ))}
       </div>
+      <Pagination totalPages={totalPages} currentPage={currentPage} goToPage={goToPage} />  
     </div>
   );
 }

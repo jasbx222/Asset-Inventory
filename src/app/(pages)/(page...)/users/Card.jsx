@@ -1,4 +1,6 @@
+"use client"
 const Card = ({ user }) => {
+
   return (
     <div
       key={user.id}
@@ -30,6 +32,7 @@ const Card = ({ user }) => {
           حذف
         </button>
       </div>
+
     </div>
   );
 };

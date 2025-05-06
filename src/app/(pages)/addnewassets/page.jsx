@@ -9,8 +9,8 @@ export default function Page() {
   const [state, action, isPending] = useActionState(sendItems, undefined);
   return (
     <div className="min-h-screen   container w-[100%]  p-6">
-      <div className="max-w-4xl mx-auto bg-white shadow-md hover:shadow-2xl shadow-amber-600  rounded-3xl p-8">
-        <h2 className="text-3xl font-bold text-amber-600 text-center mb-8">
+      <div className="max-w-4xl mx-auto bg-white shadow-md    rounded-3xl p-8">
+        <h2 className="text-3xl font-bold text-[#fa9718] text-center mb-8">
           <span>إضافة أصل </span>
         </h2>
 

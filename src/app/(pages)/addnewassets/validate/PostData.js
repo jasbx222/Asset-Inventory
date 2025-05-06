@@ -1,8 +1,8 @@
 "use server";
-
 import axios from "axios";
 import { addNewAssetSchema } from "./validation";
-
+import setToken from "@/app/utils/tokens/setToken";
+import getToken from "@/app/utils/tokens/getToken";
 export const sendItems = async (prevState, formData) => {
   try {
     const assetId = formData.get("assetId");
@@ -22,7 +22,9 @@ export const sendItems = async (prevState, formData) => {
       notes,
       authority,
     };
-    console.log(data)
+   
+  
+
     // هنا نقوم بعمل فحص للبيانات المدخلة باستخدام مكتبة Zod
 
     const validationResult = addNewAssetSchema.safeParse(data);

@@ -1,4 +1,4 @@
-import { SearchCheck } from "lucide-react";
+import { MountainIcon, PackagePlus, Printer, SearchCheck } from "lucide-react";
 import { Timer, LocationEdit, User, Pencil, Trash2 } from "lucide-react";
 import Link from "next/link";
 
@@ -46,6 +46,12 @@ export const Table = ({ filtered }) => {
           </th>
           <th className="px-6 py-4 text-center border-b">
             <div className="flex items-center justify-center gap-1">
+              <PackagePlus size={18} />
+              <span>الكمية</span>
+            </div>
+          </th>
+          <th className="px-6 py-4 text-center border-b">
+            <div className="flex items-center justify-center gap-1">
               <User size={18} />
               <span>الموظف</span>
             </div>
@@ -70,7 +76,11 @@ export const Table = ({ filtered }) => {
               </td>
               <td className="px-6 py-4 text-center border-t">{inv.date}</td>
               <td className="px-6 py-4 text-center border-t">{inv.location}</td>
+              <td className="px-6 py-4 text-center border-t">
+                {inv.quntity ?? 0}
+              </td>
               <td className="px-6 py-4 text-center border-t">{inv.user}</td>
+
               <td className="px-6 py-4 text-center border-t">
                 <div className="flex justify-center gap-3">
                   {/* زر التعديل */}
@@ -121,7 +131,6 @@ export const FilterLocation = () => {
   );
 };
 
-
 // فلتر الموظف
 export const FilterEmployee = () => {
   return (
@@ -140,7 +149,6 @@ export const FilterEmployee = () => {
   );
 };
 
-
 // فلتر الأصول
 export const FilterAssets = () => {
   return (
@@ -155,7 +163,6 @@ export const FilterAssets = () => {
     </div>
   );
 };
-
 
 // فلتر التاريخ
 
@@ -174,35 +181,34 @@ export const FilterDate = () => {
 
 // زر تطبيق الفلتر
 
-export const BtnFliter = ({
-  handleShow,
-  show,
-  
-}) => {
+export const BtnFliter = ({ handleShow, show }) => {
   return (
     <div className=" mb-4 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
-    <button
-      className="
-    flex items-center justify-center mb-4 bg-green-400 text-gray-950 px-4 py-2 rounded-lg shadow-md hover:bg-amber-700 transition duration-300"
-    >
-      <span>تصدير Exel</span>
-    </button>
-    <button
-      className="
+      <button
+        className="
+    flex items-center justify-center gap-5 mb-4 bg-[#41BC4C] text-gray-950 px-4 py-2 rounded-lg shadow-md hover:bg-[#41bc4b85] transition duration-300"
+      >
+        <span>تصدير Exel</span>
+        <Printer size={18} className="text-gray-950" />
+      </button>
+      <button
+        className="
+    flex items-center justify-center mb-4 bg-blue-400 text-gray-950 px-4 py-2 rounded-lg shadow-md hover:bg-blue-700 hover:text-white transition duration-300"
+      >
+        <span>تطبيق عملية جرد </span>
+      </button>
+      <button
+        className="
     flex items-center justify-center mb-4 bg-blue-400 text-gray-950 px-4 py-2 rounded-lg shadow-md hover:bg-amber-700 transition duration-300"
-    >
-      <span>إضافة عملية جرد جديدة</span>
-    </button>
-    <button
-      className="
-    flex items-center justify-center mb-4 bg-blue-400 text-gray-950 px-4 py-2 rounded-lg shadow-md hover:bg-amber-700 transition duration-300"
-      onClick={handleShow}
-    >
-      <span>
-       {show ? "إخفاء الفلاتر" : "إظهار الفلاتر"}
-        
-        </span>
-    </button>
-  </div>
+        onClick={handleShow}
+      >
+        <span>{show ? "إخفاء الفلاتر" : "إظهار الفلاتر"}</span>
+      </button>
+    </div>
   );
 };
+
+
+
+
+ 

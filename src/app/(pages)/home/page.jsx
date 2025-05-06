@@ -11,14 +11,14 @@ export default function Page() {
   ];
 
   return (
-    <div dir="rtl" className="p-6 bg-gray-900 h-screen  rounded  container w-[100%]">
+    <div dir="rtl" className="p-6 bg-[#2d2d2d] h-screen  rounded  container w-[100%]">
    
 
       <div className="grid grid-cols-1 sm:grid-cols-2  lg:grid-cols-4 gap-12">
         {stats.map((item, index) => (
           <div
             key={index}
-            className={`rounded-2xl home shadow-md shadow-amber-400 p-6 text-white flex flex-col justify-center items-center bg-amber-600  `}
+            className={`rounded-2xl home shadow-md shadow-amber-600 p-6 text-gray-900 flex flex-col justify-center items-center bg-[#fa9718]  `}
           >
             <div className="text-2xl">{item.label}</div>
             <div className="text-3xl font-bold mt-2">{item.value}</div>

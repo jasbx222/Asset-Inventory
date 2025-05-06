@@ -11,7 +11,7 @@ export const MoreLinks = ({ isMoreOpen, moreLinks }) => {
             <li key={index}>
               <Link
                 href={link.href}
-                className={`flex items-center justify-between hover:bg-amber-600 p-2 text-gray-200 rounded-lg group`}
+                className={`flex items-center justify-between hover:bg-[#fa9718] p-2 text-gray-200 rounded-lg group`}
               >
                 <span className="flex-1 hover:text-gray-900">{link.label}</span>
                 <span className={`w-5 h-5 text-amber-50`}>{link.icon}</span>
